@@ -44,20 +44,4 @@ ENV PORT 3000
 ENV HOSTNAME "0.0.0.0"
 
 CMD ["node", "server.js"]
-```
 
-### 4️⃣ Crie o `.dockerignore`
-```
-# .dockerignore
-node_modules
-.next
-.git
-.gitignore
-README.md
-.env
-.env.local
-.env*.local
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.DS_Store

@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  pagsmile-checkout:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PAGSMILE_APP_ID=${PAGSMILE_APP_ID}
+      - PAGSMILE_SECURITY_KEY=${PAGSMILE_SECURITY_KEY}
+      - PAGSMILE_API_URL=${PAGSMILE_API_URL}
+      - NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL}
+    restart: unless-stopped
+    networks:
+      - pagsmile-network
+
+networks:
+  pagsmile-network:
+    driver: bridge
